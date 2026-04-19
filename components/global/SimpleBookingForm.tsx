@@ -29,32 +29,27 @@ export default function BookingForm() {
     notes: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    try {
-      const response = await fetch('/api/booking', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        setSubmitted(true);
-      } else {
-        alert(result.error || 'Something went wrong. Please try again.');
-      }
-    } catch (error) {
-      console.error('Booking error:', error);
-      alert('Failed to submit booking. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+  const serviceName = SERVICES.find(s => s.id === formData.service)?.name || "";
+  const formattedDate = formData.date ? new Date(formData.date).toLocaleDateString('en-US', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  }) : "";
+
+  const handleEmailSubmit = () => {
+    const subject = `Yoga Booking: ${formData.name} - ${serviceName}`;
+    const body = `New Yoga Booking Request:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Session Type: ${serviceName}
+Date: ${formattedDate}
+Time: ${formData.time}
+Notes: ${formData.notes || "None"}`;
+
+    window.location.href = `mailto:hello@sanctuary-yoga.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
   };
 
   if (submitted) {
@@ -66,12 +61,12 @@ export default function BookingForm() {
       >
         <div className="w-16 h-16 rounded-full bg-sage/20 flex items-center justify-center mx-auto mb-6">
           <svg className="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-serif text-2xl text-charcoal mb-2">Booking Request Received!</h3>
-        <p className="font-sans text-charcoal/60 mb-6">
-          We'll confirm your session within 24 hours. Check your email for details.
+        <h3 className="font-serif text-2xl text-charcoal mb-2">Email Opened!</h3>
+        <p className="font-sans text-charcoal/60 mb-4">
+          Please send the email to complete your booking request.
         </p>
         <button
           onClick={() => { setSubmitted(false); setStep(1); setFormData({name: "", email: "", phone: "", service: "", date: "", time: "", notes: ""}); }}
@@ -92,7 +87,7 @@ export default function BookingForm() {
         ))}
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="space-y-6">
         {step === 1 && (
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
             <h3 className="font-serif text-xl text-charcoal mb-4">Choose Your Session</h3>
@@ -165,8 +160,9 @@ export default function BookingForm() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setStep(3)}
-                  className="flex-1 py-3 rounded-xl bg-sage text-white font-sans hover:opacity-90"
+                  onClick={() => formData.name && formData.email ? setStep(3) : null}
+                  disabled={!formData.name || !formData.email}
+                  className="flex-1 py-3 rounded-xl bg-sage text-white font-sans hover:opacity-90 disabled:opacity-50"
                 >
                   Continue
                 </button>
@@ -228,17 +224,17 @@ export default function BookingForm() {
                   Back
                 </button>
                 <button
-                  type="submit"
-                  disabled={loading}
-                  className="flex-1 py-3 rounded-xl bg-sage text-white font-sans hover:opacity-90 disabled:opacity-50"
+                  type="button"
+                  onClick={handleEmailSubmit}
+                  className="flex-1 py-3 rounded-xl bg-sage text-white font-sans hover:opacity-90"
                 >
-                  {loading ? "Sending..." : "Confirm Booking"}
+                  Send Booking Request
                 </button>
               </div>
             </div>
           </motion.div>
         )}
-      </form>
+      </div>
     </div>
   );
 }
