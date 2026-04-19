@@ -1,6 +1,6 @@
 "use client";
 
-import SimpleBookingForm from "@/components/global/SimpleBookingForm";
+import BookingForm from "@/components/global/BookingForm";
 import { motion } from "framer-motion";
 
 export default function SchedulePage() {
@@ -24,7 +24,7 @@ export default function SchedulePage() {
 
         {/* Simple Booking Form */}
         <div className="w-full max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-8">
-          <SimpleBookingForm />
+          <BookingForm />
         </div>
       </motion.div>
     </div>
