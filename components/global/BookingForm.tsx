@@ -193,6 +193,21 @@ export default function BookingForm() {
     );
   }
 
+  if (classes.length > 0 && groupList.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-terracotta font-sans">No class schedules found. Please add class times in Supabase.</p>
+        <p className="font-sans text-sm text-charcoal/60 mt-2">Add entries to class_schedules table.</p>
+        <button
+          onClick={() => { setLoading(true); setError(""); window.location.reload(); }}
+          className="mt-4 text-sage hover:underline font-sans"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-xl mx-auto">
       <div className="flex gap-2 mb-8">
