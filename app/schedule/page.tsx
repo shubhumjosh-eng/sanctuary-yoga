@@ -1,7 +1,8 @@
 "use client";
 
-import BookingWidget from "@/components/global/BookingWidget";
+import SimpleBookingForm from "@/components/global/SimpleBookingForm";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function SchedulePage() {
   return (
@@ -19,32 +20,29 @@ export default function SchedulePage() {
           Book Your Practice
         </h1>
         <p className="font-sans text-charcoal/60 max-w-xl text-lg leading-relaxed mb-12">
-          Schedule your yoga session below. Choose from our variety of classes 
+          Schedule your yoga session directly below. Choose from our variety of classes 
           taught by San Francisco's finest independent instructors.
         </p>
 
-        {/* Booking Widget */}
-        <div className="w-full min-h-[600px] rounded-2xl overflow-hidden bg-white shadow-lg">
-          <BookingWidget 
-            companyId="demo" 
-            buttonColor="#B87B6A"
-          />
+        {/* Simple Booking Form */}
+        <div className="w-full max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+          <SimpleBookingForm />
         </div>
 
-        {/* Alternative booking methods */}
-        <div className="mt-12 p-6 rounded-2xl bg-stone/20">
+        {/* Direct contact alternative */}
+        <div className="mt-12 p-6 rounded-2xl bg-stone/20 max-w-xl mx-auto">
           <h2 className="font-serif text-xl text-charcoal mb-4">
-            Need to book a private session?
+            Prefer to book directly?
           </h2>
           <p className="font-sans text-charcoal/60 mb-4">
-            For private sessions with specific teachers, we recommend reaching out directly.
+            Email us your preferred session type, date, and time. We'll confirm within 24 hours.
           </p>
-          <a
-            href="mailto:hello@sanctuary-yoga.com?subject=Private%20Yoga%20Session%20Inquiry"
+          <Link
+            href="mailto:hello@sanctuary-yoga.com?subject=Yoga%20Session%20Booking%20Request&body=Name:%20%0D%0AEmail:%20%0D%0APhone:%20%0D%0ASession:%20%0D%0ADate:%20%0D%0ATime:%20%0D%0ANotes:"
             className="inline-flex items-center px-6 py-3 rounded-full bg-charcoal text-linen font-sans text-sm tracking-wider hover:bg-sage transition-colors"
           >
-            Email for Private Sessions
-          </a>
+            Email to Book
+          </Link>
         </div>
       </motion.div>
     </div>
