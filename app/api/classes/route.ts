@@ -16,8 +16,7 @@ export async function GET(request: Request) {
       *,
       instructors(id, name, avatar_url, specialties),
       class_schedules(id, day_of_week, start_time, end_time, location)
-    `)
-    .eq('is_active', true);
+    `);
 
   if (instructorId) {
     query = query.eq('instructor_id', instructorId);
@@ -30,6 +29,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: error.message, details: 'Database query failed' }, { status: 500 });
   }
 
+  console.log('[Classes API] Found:', classes?.length, 'classes');
+
   let filtered = classes;
   if (dayOfWeek !== null) {
     filtered = classes?.filter((c: any) =>
@@ -37,7 +38,7 @@ export async function GET(request: Request) {
     ) || [];
   }
 
-  return NextResponse.json(filtered);
+  return NextResponse.json({ classes: filtered, debug: { count: filtered?.length || 0 } });
 }
 
 export async function POST(request: Request) {

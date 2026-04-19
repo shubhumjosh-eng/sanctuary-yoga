@@ -61,12 +61,14 @@ export default function BookingForm() {
   useEffect(() => {
     fetch("/api/classes")
       .then(res => res.json())
+      .then(res => res.json())
       .then(data => {
         console.log('[BookingForm] API response:', data);
         if (data.error) {
           setError(data.error + (data.details ? ` (${data.details})` : ''));
         } else {
-          const mapped = data.map((c: any) => ({
+          const classList = data.classes || data;
+          setClasses(classList.map((c: any) => ({
             id: c.id,
             title: c.title,
             description: c.description,
