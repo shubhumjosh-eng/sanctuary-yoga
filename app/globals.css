@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-charcoal: #1C1C1C;
+  --color-linen: #F9F8F6;
+  --color-stone: #D6D0C4;
+  --color-sage: #7C8B7A;
+  --color-terracotta: #B87B6A;
+  --color-border: rgba(28, 28, 28, 0.08);
+  --color-border-mid: rgba(28, 28, 28, 0.15);
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --color-charcoal: #F9F8F6;
+  --color-linen: #0F0F0F;
+  --color-stone: #4A4A4A;
+  --color-sage: #9CAF93;
+  --color-terracotta: #D4957F;
+  --color-border: rgba(249, 248, 246, 0.1);
+  --color-border-mid: rgba(249, 248, 246, 0.2);
+}
+
+* {
+  cursor: none;
+}
+
+html {
+  color: var(--color-charcoal);
+  background-color: var(--color-linen);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F9F8F6;
+  overflow-x: hidden;
+  /* Optimize for smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+
+/* Restore cursor for inputs */
+input, textarea, select, a, button {
+  cursor: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #F9F8F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6D0C4;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7C8B7A;
+}
+
+/* Typography base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+}
+
+p, span, a, li, label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-feature-settings: "ss01", "ss02", "kern";
+}
+
+/* Selection */
+::selection {
+  background: rgba(124, 139, 122, 0.2);
+  color: #1C1C1C;
+}
+
+/* Smooth focus ring */
+*:focus-visible {
+  outline: 1.5px solid var(--color-sage);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Hairline borders utility */
+.border-hairline {
+  border-color: var(--color-border);
+}
+
+/* Text stroke utility */
+.text-stroke {
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+/* Wabi-sabi grain overlay */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.6;
+}
+
+/* Glass morphism - used sparingly */
+.glass {
+  background: rgba(249, 248, 246, 0.82);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 0.8px solid rgba(28, 28, 28, 0.08);
+}
+
+/* Kinetic underline */
+.kinetic-link {
+  position: relative;
+  text-decoration: none;
+}
+.kinetic-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 0.8px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.kinetic-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Will-change for animated elements */
+.gpu {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Mobile cursor reset */
+@media (max-width: 768px) {
+  * { cursor: auto !important; }
+}
