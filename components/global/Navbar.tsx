@@ -80,12 +80,12 @@ export default function Navbar() {
               )}
             </button>
 
-            <button
-              onClick={() => setBookingOpen(true)}
+            <a
+              href="/schedule"
               className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-terracotta text-white text-sm font-sans tracking-[0.06em] hover:bg-[#a36b5a] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
             >
               Book a class
-            </button>
+            </a>
 
             {/* Mobile hamburger */}
             <button
