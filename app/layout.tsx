@@ -6,27 +6,29 @@ import CustomCursor from "@/components/global/CustomCursor";
 import SmoothScrollProvider from "@/components/global/SmoothScrollProvider";
 import { ToastProvider } from "@/components/global/Toast";
 import { ThemeProvider } from "@/components/global/ThemeProvider";
+import BackToTop from "@/components/global/BackToTop";
 
 export const metadata: Metadata = {
-  title: "Sanctuary | Breath-Led Yoga Practice in San Francisco",
+  title: "Sanctuary Yoga | Multi-Vendor Marketplace for Yoga Teachers",
   description:
-    "A private yoga studio offering Vinyasa, Yin, Meditation and Sound Healing. Small group and one-to-one sessions with master instructors.",
-  keywords: ["yoga studio san francisco", "private yoga", "vinyasa", "yin yoga", "meditation", "sound healing"],
+    "Connect with San Francisco's best independent yoga teachers. Book classes, discover new instructors, and practice what you need.",
+  keywords: ["yoga marketplace", "yoga teachers", "yoga classes san francisco", "book yoga class", "yoga instructor"],
   openGraph: {
     title: "Sanctuary | Breath-Led Yoga Practice",
     description: "Movement is Medicine. A digital sanctuary for breath-led practice.",
     type: "website",
     locale: "en_US",
     siteName: "Sanctuary Yoga",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Sanctuary Yoga Studio" }],
+    images: [{ url: "https://sanctuary-yoga.vercel.app/og-image.jpg", width: 1200, height: 630, alt: "Sanctuary Yoga Marketplace" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sanctuary | Breath-Led Yoga Practice",
-    description: "Movement is Medicine.",
+    title: "Sanctuary Yoga | Multi-Vendor Marketplace",
+    description: "Teach What You Love. Practice What You Need.",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://sanctuary-yoga.com" },
+  alternates: { canonical: "https://sanctuary-yoga.vercel.app" },
+  metadataBase: "https://sanctuary-yoga.vercel.app",
 };
 
 const jsonLd = {
@@ -110,8 +112,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SmoothScrollProvider>
               <CustomCursor />
               <Navbar />
-              <main>{children}</main>
-              <Footer />
+<main>{children}</main>
+          <Footer />
+          <BackToTop />
             </SmoothScrollProvider>
           </ToastProvider>
         </ThemeProvider>
