@@ -86,17 +86,13 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
           >
             <a
-              href="https://cal.com/sanctuary-yoga"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-terracotta text-white font-sans text-sm tracking-wider hover:bg-[#a36b5a] transition-colors duration-300"
             >
               Find a Class
             </a>
             <a
-              href="https://tally.so/r/wQ5PGl"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-charcoal/20 bg-transparent text-charcoal font-sans text-sm tracking-wider hover:bg-charcoal/5 transition-colors duration-300"
             >
               Become a Teacher

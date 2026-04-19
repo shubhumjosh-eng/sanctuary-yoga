@@ -7,9 +7,10 @@ A Next.js/Tailwind website for a yoga teacher marketplace demo.
 - **Framework:** Next.js 16 (App Router)
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
-- **Booking:** Cal.com (cal.com/your-username)
+- **Booking:** Picktime (free forever) or iframe embed
 - **Forms:** Tally.so (teacher waitlist)
 - **Deployment:** Vercel
+- **Future:** Zoneless for payment splitting (see below)
 
 ## Getting Started
 
@@ -75,6 +76,15 @@ Edit `components/global/Navbar.tsx` - Update booking modal or link to Cal.com
 - `/teachers` - Teacher profiles
 - `/contact` - Contact form
 - `/blog` - Journal
+
+## Future: Payment Splitting with Zoneless
+
+Zoneless (https://github.com/zoneless) is an open-source alternative to Stripe Connect for split payments.
+
+**For Phase 2 (multi-vendor payments):**
+- Teachers can receive payments directly through the platform
+- Automatic commission splitting between platform and instructors
+- Research Zoneless integration when ready for production
 
 ## License
 
