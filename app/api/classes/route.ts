@@ -26,7 +26,8 @@ export async function GET(request: Request) {
   const { data: classes, error } = await query;
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error('Supabase error:', error);
+    return NextResponse.json({ error: error.message, details: 'Database query failed' }, { status: 500 });
   }
 
   let filtered = classes;

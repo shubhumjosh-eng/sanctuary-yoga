@@ -62,8 +62,9 @@ export default function BookingForm() {
     fetch("/api/classes")
       .then(res => res.json())
       .then(data => {
+        console.log('[BookingForm] API response:', data);
         if (data.error) {
-          setError("Unable to load classes. Please try again later.");
+          setError(data.error + (data.details ? ` (${data.details})` : ''));
         } else {
           const mapped = data.map((c: any) => ({
             id: c.id,
