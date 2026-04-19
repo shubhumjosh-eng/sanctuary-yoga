@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST='{"components\\\\global\\\\SmoothScrollProvider.tsx -> @studio-freight/lenis":{"id":5782,"files":["static/chunks/782.ba81a1c3c8f43d8d.js"]}}';
