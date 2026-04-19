@@ -58,6 +58,84 @@ export default function BookingForm() {
     notes: "",
   });
 
+  // Static fallback data in case database is empty
+  const staticClasses = [
+    {
+      id: "1",
+      title: "Morning Flow",
+      description: "Start your day with energizing vinyasa flow",
+      yoga_style: "Vinyasa",
+      level: "All Levels",
+      duration_minutes: 60,
+      capacity: 12,
+      price: 25,
+      instructor_name: "Maya Johnson",
+      schedules: [
+        { id: "s1", day_of_week: 1, start_time: "07:00", end_time: "08:00", location: "Studio A" },
+        { id: "s2", day_of_week: 3, start_time: "07:00", end_time: "08:00", location: "Studio A" },
+        { id: "s3", day_of_week: 5, start_time: "07:00", end_time: "08:00", location: "Studio A" }
+      ]
+    },
+    {
+      id: "2",
+      title: "Hatha Basics",
+      description: "Foundational hatha yoga for beginners",
+      yoga_style: "Hatha",
+      level: "Beginner",
+      duration_minutes: 75,
+      capacity: 15,
+      price: 20,
+      instructor_name: "Maya Johnson",
+      schedules: [
+        { id: "s4", day_of_week: 2, start_time: "18:00", end_time: "19:15", location: "Studio B" },
+        { id: "s5", day_of_week: 4, start_time: "18:00", end_time: "19:15", location: "Studio B" }
+      ]
+    },
+    {
+      id: "3",
+      title: "Power Hour",
+      description: "High-intensity power yoga session",
+      yoga_style: "Power Yoga",
+      level: "Intermediate",
+      duration_minutes: 60,
+      capacity: 10,
+      price: 30,
+      instructor_name: "Daniel Chen",
+      schedules: [
+        { id: "s6", day_of_week: 1, start_time: "17:30", end_time: "18:30", location: "Studio A" },
+        { id: "s7", day_of_week: 3, start_time: "17:30", end_time: "18:30", location: "Studio A" }
+      ]
+    },
+    {
+      id: "4",
+      title: "Deep Stretch",
+      description: "Restorative yin yoga for deep release",
+      yoga_style: "Yin",
+      level: "All Levels",
+      duration_minutes: 75,
+      capacity: 12,
+      price: 25,
+      instructor_name: "Priya Patel",
+      schedules: [
+        { id: "s8", day_of_week: 2, start_time: "19:30", end_time: "20:45", location: "Studio B" }
+      ]
+    },
+    {
+      id: "5",
+      title: "Evening Restore",
+      description: "Wind down with gentle restorative poses",
+      yoga_style: "Restorative",
+      level: "All Levels",
+      duration_minutes: 60,
+      capacity: 15,
+      price: 22,
+      instructor_name: "Priya Patel",
+      schedules: [
+        { id: "s9", day_of_week: 5, start_time: "19:00", end_time: "20:00", location: "Studio B" }
+      ]
+    }
+  ];
+
   useEffect(() => {
     fetch("/api/classes")
       .then(res => res.json())
@@ -65,24 +143,34 @@ export default function BookingForm() {
         console.log('[BookingForm] API response:', data);
         if (data.error) {
           setError(data.error + (data.details ? ` (${data.details})` : ''));
+          // Use static data if API fails
+          setClasses(staticClasses);
         } else {
           const classList = data.classes || data;
-          const mapped = classList.map((c: any) => ({
-            id: c.id,
-            title: c.title,
-            description: c.description,
-            yoga_style: c.yoga_style,
-            level: c.level,
-            duration_minutes: c.duration_minutes,
-            capacity: c.capacity,
-            price: c.price,
-            instructor_name: c.instructors?.name || "TBA",
-            schedules: c.class_schedules || [],
-          }));
-          setClasses(mapped);
+          // Use static data if empty
+          if (classList && classList.length > 0) {
+            const mapped = classList.map((c: any) => ({
+              id: c.id,
+              title: c.title,
+              description: c.description,
+              yoga_style: c.yoga_style,
+              level: c.level,
+              duration_minutes: c.duration_minutes,
+              capacity: c.capacity,
+              price: c.price,
+              instructor_name: c.instructors?.name || "TBA",
+              schedules: c.class_schedules || [],
+            }));
+            setClasses(mapped);
+          } else {
+            setClasses(staticClasses);
+          }
         }
       })
-      .catch(() => setError("Unable to load classes"))
+      .catch(() => {
+        setError("Unable to load classes");
+        setClasses(staticClasses);
+      })
       .finally(() => setLoading(false));
   }, []);
 
