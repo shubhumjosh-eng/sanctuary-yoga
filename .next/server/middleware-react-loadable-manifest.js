@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components\\\\global\\\\SmoothScrollProvider.tsx -> @studio-freight/lenis\":{\"id\":\"components\\\\global\\\\SmoothScrollProvider.tsx -> @studio-freight/lenis\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_studio-freight_lenis_dist_lenis_mjs.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST='{"components\\\\global\\\\SmoothScrollProvider.tsx -> @studio-freight/lenis":{"id":5782,"files":["static/chunks/782.ba81a1c3c8f43d8d.js"]}}';

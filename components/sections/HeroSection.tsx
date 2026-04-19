@@ -3,8 +3,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const words = ["Movement", "is", "Medicine."];
-
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -29,13 +27,8 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
           aria-hidden="true"
         >
-          {/* Pexels free video - water surface */}
-          <source
-            src="https://videos.pexels.com/video-files/3225526/3225526-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
+          <source src="https://videos.pexels.com/video-files/3225526/3225526-uhd_2560_1440_25fps.mp4" type="video/mp4" />
         </video>
-        {/* Subtle overlay */}
         <div className="absolute inset-0 bg-linen/55" />
       </motion.div>
 
@@ -51,31 +44,27 @@ export default function HeroSection() {
           transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="font-sans text-xs tracking-[0.25em] uppercase text-charcoal/50 mb-8"
         >
-          San Francisco · Est. 2019
+          San Francisco · Marketplace
         </motion.p>
 
         {/* Headline */}
-        <h1 className="font-serif text-display-xl leading-none tracking-tight max-w-3xl">
-          {words.map((word, i) => (
-            <motion.span
-              key={word + i}
-              initial={{ opacity: 0, y: 40, rotateX: -10 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{
-                delay: 0.5 + i * 0.12,
-                duration: 0.9,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="inline-block mr-[0.18em] last:mr-0"
-              style={{ display: "inline-block", transformStyle: "preserve-3d" }}
-            >
-              {word === "Medicine." ? (
-                <span className="italic text-sage">{word}</span>
-              ) : (
-                word
-              )}
-            </motion.span>
-          ))}
+        <h1 className="font-serif text-display-xl leading-none tracking-tight max-w-4xl">
+          <motion.span
+            initial={{ opacity: 0, y: 40, rotateX: -10 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="block"
+          >
+            Teach What You Love.
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 40, rotateX: -10 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            transition={{ delay: 0.62, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="block italic text-sage"
+          >
+            Practice What You Need.
+          </motion.span>
         </h1>
 
         {/* Subhead + CTA row */}
@@ -84,26 +73,30 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans text-base md:text-lg text-charcoal/65 max-w-md leading-relaxed"
+            className="font-sans text-base md:text-lg text-charcoal/65 max-w-lg leading-relaxed"
           >
-            A sanctuary for breath-led practice.<br className="hidden md:block" />
-            Rooted in tradition. Guided by presence.
+            Sanctuary is the platform connecting San Francisco&apos;s best independent yoga teachers with students seeking authentic, breath-led practice.
           </motion.p>
 
+          {/* Two Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-6"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
           >
             <a
-              href="#practice"
-              className="kinetic-link font-sans text-sm tracking-[0.1em] text-charcoal/60 uppercase"
+              href="#schedule"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-terracotta text-white font-sans text-sm tracking-wider hover:bg-[#a36b5a] transition-colors duration-300"
             >
-              Explore
+              Find a Class
             </a>
-            <div className="w-12 h-[0.8px] bg-charcoal/30" />
-            <span className="font-serif text-sm italic text-charcoal/40">scroll</span>
+            <a
+              href="#teacher-waitlist"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-charcoal/20 bg-transparent text-charcoal font-sans text-sm tracking-wider hover:bg-charcoal/5 transition-colors duration-300"
+            >
+              Become a Teacher
+            </a>
           </motion.div>
         </div>
       </motion.div>

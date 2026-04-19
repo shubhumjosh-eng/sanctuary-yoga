@@ -62,7 +62,7 @@ export default function ScheduleSection() {
   const classes = schedule[activeDay] || [];
 
   return (
-    <section className="py-24 md:py-36 bg-charcoal/[0.02]">
+    <section id="schedule" className="py-24 md:py-36 bg-charcoal/[0.02]">
       <div ref={ref} className="px-6 md:px-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
