@@ -7,10 +7,12 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
-  { label: "For Students", href: "/#schedule" },
-  { label: "For Teachers", href: "/#teacher-waitlist" },
+  { label: "Home", href: "/" },
+  { label: "Classes", href: "/classes" },
+  { label: "Teachers", href: "/teachers" },
   { label: "Pricing", href: "/pricing" },
   { label: "Journal", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {

@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+// TODO: Replace this with your Tally form embed URL
+// Go to https://tally.so to create a form, then copy the embed URL
+const TALLY_EMBED_URL = "https://tally.so/embed/wQ5PGl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+
 export default function TeacherWaitlistSection() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
