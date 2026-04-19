@@ -35,11 +35,26 @@ export default function BookingForm() {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate submission (replace with actual endpoint)
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setSubmitted(true);
-    setLoading(false);
+    try {
+      const response = await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        alert(result.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Booking error:', error);
+      alert('Failed to submit booking. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {

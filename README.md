@@ -31,6 +31,14 @@ npm run build
 2. Deploy automatically on push to main
 3. Custom domain: sanctuary-yoga.com
 
+### Environment Variables
+
+Add these in Vercel Dashboard → Settings → Environment Variables:
+
+| Variable | Value |
+|----------|-------|
+| `RESEND_API_KEY` | Your Resend API key (re_xxxxx...) |
+
 ## Admin Guide
 
 ### Update Contact Information
