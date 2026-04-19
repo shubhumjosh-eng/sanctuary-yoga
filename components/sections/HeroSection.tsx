@@ -48,7 +48,7 @@ export default function HeroSection() {
         </motion.p>
 
         {/* Headline */}
-        <h1 className="font-serif text-display-xl leading-none tracking-tight max-w-4xl">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight max-w-4xl overflow-visible break-words">
           <motion.span
             initial={{ opacity: 0, y: 40, rotateX: -10 }}
             animate={{ opacity: 1, y: 0, rotateX: 0 }}

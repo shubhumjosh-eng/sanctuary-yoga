@@ -28,10 +28,16 @@ export default function Footer() {
             <p className="font-sans text-sm text-charcoal/60 leading-relaxed max-w-xs">
               A private space where movement becomes medicine. Rooted in tradition, guided by breath.
             </p>
-            <p className="font-sans text-xs text-charcoal/40 mt-8">
+            <p className="font-sans text-xs text-charcoal/60 mt-8">
               1847 Fillmore Street<br />
               San Francisco, CA 94115
             </p>
+            <a href="mailto:hello@sanctuary-yoga.com" className="font-sans text-xs text-sage mt-4 block hover:underline">
+              hello@sanctuary-yoga.com
+            </a>
+            <a href="tel:+14155551234" className="font-sans text-xs text-sage mt-2 block hover:underline">
+              (415) 555-1234
+            </a>
           </div>
 
           {/* Col 2: Quick Links */}
