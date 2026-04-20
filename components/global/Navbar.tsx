@@ -8,9 +8,9 @@ import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Classes", href: "/classes" },
+  { label: "Courses", href: "/courses" },
   { label: "Teachers", href: "/teachers" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Journal", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -81,10 +81,10 @@ export default function Navbar() {
             </button>
 
             <a
-              href="/schedule"
+              href="/courses"
               className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-terracotta text-white text-sm font-sans tracking-[0.06em] hover:bg-[#a36b5a] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Book a class
+              Enroll Now
             </a>
 
             {/* Mobile hamburger */}
