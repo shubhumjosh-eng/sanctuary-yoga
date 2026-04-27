@@ -11,12 +11,11 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
-  async redirects() {
+  async rewrites() {
     return [
       {
-        source: '/instructors',
-        destination: '/teachers',
-        permanent: true,
+        source: '/teachers',
+        destination: '/instructors',
       },
     ];
   },
