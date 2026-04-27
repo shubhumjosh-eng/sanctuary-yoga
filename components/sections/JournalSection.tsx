@@ -6,25 +6,25 @@ import { motion, useInView } from "framer-motion";
 const posts = [
   {
     tag: "Practice",
-    title: "On the intelligence of slowness",
-    excerpt: "What Yin yoga taught me about the nervous system, and why the modern obsession with intensity is costing us.",
-    date: "Nov 12, 2024",
+    title: "5 Breathwork Exercises for the MTR Morning Commute",
+    excerpt: "The 8:23 AM Tsuen Wan Line doesnt have to stress you out. Here are five discreet, powerful breathwork techniques you can practice with your eyes closed and your hand on the rail.",
+    date: "Nov 10, 2024",
     readTime: "6 min",
     img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
   },
   {
     tag: "Breathwork",
-    title: "The exhale you've been holding",
-    excerpt: "A deep dive into the physiology of breath retention, and simple practices to release chronic tension patterns.",
-    date: "Oct 28, 2024",
+    title: "Where to Find Silence in the Loudest City on Earth",
+    excerpt: "There's no such thing as total silence in Hong Kong, but these five urban oases come close. Our teacher Suki Li shares her secret spots for a quiet sunrise practice.",
+    date: "Nov 20, 2024",
     readTime: "4 min",
     img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80",
   },
   {
     tag: "Sound",
-    title: "Resonance as medicine: a primer",
-    excerpt: "How Tibetan bowls, gongs, and voice work with the vagus nerve to shift autonomic state.",
-    date: "Oct 5, 2024",
+    title: "Corporate Wellness: Why Your Company Needs More Than a Health Talk",
+    excerpt: "Jason Tsang, our corporate mindfulness lead, explains why a single workshop isnt enough, and what a real wellness strategy looks like for Hong Kong teams.",
+    date: "Dec 1, 2024",
     readTime: "8 min",
     img: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80",
   },
@@ -58,7 +58,7 @@ export default function JournalSection() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.3 }}
-          href="#"
+          href="/journal"
           className="kinetic-link font-sans text-sm tracking-[0.1em] uppercase text-charcoal/40 hover:text-charcoal transition-colors duration-200"
         >
           All writings →
@@ -105,7 +105,7 @@ export default function JournalSection() {
               {post.excerpt}
             </p>
 
-            <a href="#" className="kinetic-link inline-block mt-4 font-sans text-xs tracking-[0.12em] uppercase text-charcoal/40 hover:text-charcoal transition-colors duration-200">
+            <a href="/journal" className="kinetic-link inline-block mt-4 font-sans text-xs tracking-[0.12em] uppercase text-charcoal/40 hover:text-charcoal transition-colors duration-200">
               Read essay →
             </a>
           </motion.article>

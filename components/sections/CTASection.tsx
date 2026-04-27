@@ -42,7 +42,7 @@ export default function CTASection() {
             transition={{ delay: 0.3 }}
             className="font-sans text-sm text-linen/50 mt-6 max-w-sm leading-relaxed"
           >
-            Introductory offer — 3 classes for $75. No contract, no pressure. Just practice.
+            Introductory offer — 3 classes for HK$500. No contract, no pressure. Just practice.
           </motion.p>
         </div>
 
@@ -54,12 +54,12 @@ export default function CTASection() {
           className="flex flex-col sm:flex-row gap-4"
         >
           <button
-            onClick={() => router.push("/cart?plan=Intro%20offer&price=75")}
+            onClick={() => router.push("/cart?plan=Intro%20offer&price=500")}
             className="px-8 py-4 rounded-full bg-terracotta text-white font-sans text-sm tracking-[0.08em] hover:bg-[#a36b5a] transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
           >
             Book your intro offer
           </button>
-          <button className="px-8 py-4 rounded-full border border-linen/20 text-linen font-sans text-sm tracking-[0.08em] hover:border-linen/50 hover:bg-linen/5 transition-all duration-300">
+          <button onClick={() => router.push("/contact")} className="px-8 py-4 rounded-full border border-linen/20 text-linen font-sans text-sm tracking-[0.08em] hover:border-linen/50 hover:bg-linen/5 transition-all duration-300">
             Schedule a tour
           </button>
         </motion.div>

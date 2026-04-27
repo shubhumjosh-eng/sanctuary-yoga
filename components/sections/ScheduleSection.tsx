@@ -8,39 +8,39 @@ const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const schedule: Record<string, Array<{ time: string; name: string; teacher: string; type: string; duration: string }>> = {
   Mon: [
-    { time: "07:00", name: "Morning Vinyasa Flow", teacher: "Elena Vasquez", type: "Vinyasa", duration: "60 min" },
-    { time: "12:00", name: "Midday Breathwork", teacher: "Amara Osei", type: "Breathwork", duration: "45 min" },
-    { time: "18:00", name: "Evening Yin", teacher: "Kenji Tanaka", type: "Yin", duration: "75 min" },
+    { time: "07:00", name: "Morning Vinyasa Flow", teacher: "Anjali Mehta", type: "Vinyasa", duration: "60 min" },
+    { time: "12:00", name: "Midday Breathwork", teacher: "Suki Li", type: "Breathwork", duration: "45 min" },
+    { time: "18:00", name: "Evening Yin", teacher: "Jason Tsang", type: "Yin", duration: "75 min" },
   ],
   Tue: [
-    { time: "06:30", name: "Early Flow", teacher: "Elena Vasquez", type: "Vinyasa", duration: "60 min" },
-    { time: "10:00", name: "Gentle Restore", teacher: "Kenji Tanaka", type: "Restore", duration: "60 min" },
-    { time: "19:00", name: "Sound Healing", teacher: "Amara Osei", type: "Sound", duration: "90 min" },
+    { time: "06:30", name: "Early Flow", teacher: "Anjali Mehta", type: "Vinyasa", duration: "60 min" },
+    { time: "10:00", name: "Gentle Restore", teacher: "Jason Tsang", type: "Restore", duration: "60 min" },
+    { time: "19:00", name: "Sound Healing", teacher: "Suki Li", type: "Sound", duration: "90 min" },
   ],
   Wed: [
-    { time: "07:00", name: "Power Vinyasa", teacher: "Elena Vasquez", type: "Vinyasa", duration: "60 min" },
-    { time: "12:00", name: "Noon Meditation", teacher: "Amara Osei", type: "Meditation", duration: "30 min" },
-    { time: "17:30", name: "Yin & Nidra", teacher: "Kenji Tanaka", type: "Yin", duration: "90 min" },
+    { time: "07:00", name: "Power Vinyasa", teacher: "Carlos Pereira", type: "Vinyasa", duration: "60 min" },
+    { time: "12:00", name: "Noon Meditation", teacher: "Suki Li", type: "Meditation", duration: "30 min" },
+    { time: "17:30", name: "Yin & Nidra", teacher: "Jason Tsang", type: "Yin", duration: "90 min" },
   ],
   Thu: [
-    { time: "06:30", name: "Sunrise Vinyasa", teacher: "Elena Vasquez", type: "Vinyasa", duration: "60 min" },
-    { time: "10:00", name: "Gentle Flow", teacher: "Kenji Tanaka", type: "Restore", duration: "60 min" },
-    { time: "18:30", name: "Evening Breathwork", teacher: "Amara Osei", type: "Breathwork", duration: "45 min" },
+    { time: "06:30", name: "Sunrise Vinyasa", teacher: "Anjali Mehta", type: "Vinyasa", duration: "60 min" },
+    { time: "10:00", name: "Gentle Flow", teacher: "Jason Tsang", type: "Restore", duration: "60 min" },
+    { time: "18:30", name: "Evening Breathwork", teacher: "Suki Li", type: "Breathwork", duration: "45 min" },
   ],
   Fri: [
-    { time: "07:00", name: "Friday Flow", teacher: "Elena Vasquez", type: "Vinyasa", duration: "60 min" },
-    { time: "12:00", name: "Midday Yin", teacher: "Kenji Tanaka", type: "Yin", duration: "60 min" },
-    { time: "19:00", name: "Weekend Sound Bath", teacher: "Amara Osei", type: "Sound", duration: "90 min" },
+    { time: "07:00", name: "Friday Flow", teacher: "Carlos Pereira", type: "Vinyasa", duration: "60 min" },
+    { time: "12:00", name: "Midday Yin", teacher: "Jason Tsang", type: "Yin", duration: "60 min" },
+    { time: "19:00", name: "Weekend Sound Bath", teacher: "Suki Li", type: "Sound", duration: "90 min" },
   ],
   Sat: [
-    { time: "08:00", name: "Saturday Workshop", teacher: "Elena Vasquez", type: "Vinyasa", duration: "90 min" },
-    { time: "10:30", name: "Community Yin", teacher: "Kenji Tanaka", type: "Yin", duration: "75 min" },
-    { time: "16:00", name: "Afternoon Nidra", teacher: "Amara Osei", type: "Meditation", duration: "60 min" },
+    { time: "08:00", name: "Saturday Workshop", teacher: "Anjali Mehta", type: "Vinyasa", duration: "90 min" },
+    { time: "10:30", name: "Community Yin", teacher: "Jason Tsang", type: "Yin", duration: "75 min" },
+    { time: "16:00", name: "Afternoon Nidra", teacher: "Suki Li", type: "Meditation", duration: "60 min" },
   ],
   Sun: [
-    { time: "09:00", name: "Sunday Restore", teacher: "Kenji Tanaka", type: "Restore", duration: "75 min" },
-    { time: "11:00", name: "Slow Flow", teacher: "Elena Vasquez", type: "Vinyasa", duration: "60 min" },
-    { time: "17:00", name: "Closing Meditation", teacher: "Amara Osei", type: "Meditation", duration: "45 min" },
+    { time: "09:00", name: "Sunday Restore", teacher: "Jason Tsang", type: "Restore", duration: "75 min" },
+    { time: "11:00", name: "Slow Flow", teacher: "Carlos Pereira", type: "Vinyasa", duration: "60 min" },
+    { time: "17:00", name: "Closing Meditation", teacher: "Suki Li", type: "Meditation", duration: "45 min" },
   ],
 };
 

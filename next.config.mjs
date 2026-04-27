@@ -11,6 +11,15 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/instructors',
+        destination: '/teachers',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
