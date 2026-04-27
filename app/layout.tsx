@@ -9,9 +9,9 @@ import { ThemeProvider } from "@/components/global/ThemeProvider";
 import BackToTop from "@/components/global/BackToTop";
 
 export const metadata: Metadata = {
-  title: "Sanctuary Yoga | Multi-Vendor Marketplace for Yoga Teachers",
-  description:
-    "Connect with San Francisco's best independent yoga teachers. Book classes, discover new instructors, and practice what you need.",
+title: "Sanctuary Yoga | Hong Kong's Premium Wellness Marketplace",
+description:
+    "Connect with Hong Kong's best independent yoga teachers. Book classes, discover new instructors, and practice what you need.",
   keywords: ["yoga marketplace", "yoga teachers", "yoga classes san francisco", "book yoga class", "yoga instructor"],
   openGraph: {
     title: "Sanctuary | Breath-Led Yoga Practice",
@@ -38,21 +38,21 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": "https://sanctuary-yoga.com/#business",
       "name": "Sanctuary Yoga Studio",
-      "description": "A private yoga studio offering breath-led practice in San Francisco.",
+      "description": "A private yoga studio offering breath-led practice in Hong Kong.",
       "url": "https://sanctuary-yoga.com",
-      "telephone": "+1-415-555-0190",
+      "telephone": "+852-5555-0190",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "1847 Fillmore Street",
-        "addressLocality": "San Francisco",
-        "addressRegion": "CA",
-        "postalCode": "94115",
-        "addressCountry": "US",
+        "streetAddress": "Sheung Wan",
+        "addressLocality": "Hong Kong",
+        "addressRegion": "HK",
+        "postalCode": "0000",
+        "addressCountry": "HK",
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "37.7849",
-        "longitude": "-122.4294",
+        "latitude": "22.2846",
+        "longitude": "114.1567",
       },
       "openingHoursSpecification": [
         { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "06:30", "closes": "21:00" },
@@ -72,8 +72,8 @@ const jsonLd = {
       "educationalLevel": "Beginner to Advanced",
       "offers": {
         "@type": "Offer",
-        "price": "32",
-        "priceCurrency": "USD",
+        "price": "200",
+        "priceCurrency": "HKD",
         "availability": "https://schema.org/InStock",
       },
     },
@@ -87,8 +87,8 @@ const jsonLd = {
       "educationalLevel": "All Levels",
       "offers": {
         "@type": "Offer",
-        "price": "32",
-        "priceCurrency": "USD",
+        "price": "200",
+        "priceCurrency": "HKD",
         "availability": "https://schema.org/InStock",
       },
     },

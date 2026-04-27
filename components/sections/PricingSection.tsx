@@ -7,16 +7,16 @@ import { motion, useInView } from "framer-motion";
 const plans = [
   {
     name: "Drop-in",
-    price: "32",
+    price: "200",
     period: "per class",
     description: "For the curious and the occasional visitor. No commitment required.",
-    features: ["Single class access", "All class types", "Mat & props included", "Intro offer: 3 for $75"],
+    features: ["Single class access", "All class types", "Mat & props included", "Intro offer: 3 for HK$500"],
     cta: "Book a class",
     highlight: false,
   },
   {
     name: "Membership",
-    price: "180",
+    price: "1,800",
     period: "per month",
     description: "Our most popular path. Unlimited access to the full weekly schedule.",
     features: [
@@ -31,7 +31,7 @@ const plans = [
   },
   {
     name: "Private",
-    price: "145",
+    price: "1,200",
     period: "per session",
     description: "One-to-one sessions tailored entirely to your body, goals, and practice.",
     features: [
@@ -95,7 +95,7 @@ export default function PricingSection() {
                   {plan.name}
                 </p>
                 <div className="flex items-baseline gap-1 mb-3">
-                  <span className={`font-serif text-5xl ${plan.highlight ? "text-linen" : "text-charcoal"}`}>${plan.price}</span>
+                  <span className={`font-serif text-5xl ${plan.highlight ? "text-linen" : "text-charcoal"}`}>HK${plan.price}</span>
                   <span className={`font-sans text-sm ${plan.highlight ? "text-linen/50" : "text-charcoal/40"}`}>{plan.period}</span>
                 </div>
                 <p className={`font-sans text-sm leading-relaxed ${plan.highlight ? "text-linen/60" : "text-charcoal/60"}`}>
@@ -134,7 +134,7 @@ export default function PricingSection() {
           transition={{ delay: 0.5 }}
           className="text-center font-sans text-xs text-charcoal/30 mt-10 tracking-wide"
         >
-          Intro offer: First class $16 · Corporate wellness packages available
+          Intro offer: First class HK$100 · Corporate wellness packages available
         </motion.p>
       </div>
     </section>

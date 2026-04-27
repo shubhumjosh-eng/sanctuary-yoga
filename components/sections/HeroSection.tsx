@@ -44,7 +44,7 @@ export default function HeroSection() {
           transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="font-sans text-xs tracking-[0.25em] uppercase text-charcoal/50 mb-8"
         >
-          San Francisco · Marketplace
+          Hong Kong · Marketplace
         </motion.p>
 
         {/* Headline */}
@@ -75,7 +75,7 @@ export default function HeroSection() {
             transition={{ delay: 0.9, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="font-sans text-base md:text-lg text-charcoal/65 max-w-lg leading-relaxed"
           >
-            Sanctuary is the platform connecting San Francisco&apos;s best independent yoga teachers with students seeking authentic, breath-led practice.
+            Sanctuary is the platform connecting Hong Kong&apos;s best independent yoga teachers with students seeking authentic, breath-led practice.
           </motion.p>
 
           {/* Two Buttons */}
