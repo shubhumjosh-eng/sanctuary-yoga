@@ -23,10 +23,10 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2018", event: "Founded by Elena Vasquez in a 400 sq ft space on Fillmore" },
+  { year: "2018", event: "Founded by Elena Vasquez in a small Sheung Wan studio" },
   { year: "2019", event: "Expanded to include Yin and Meditation offerings" },
   { year: "2020", event: "Launched online classes during the pandemic — community grew worldwide" },
-  { year: "2022", event: "Moved to current location, a restored Victorian with natural light" },
+  { year: "2022", event: "Moved to current location in Central with harbour views" },
   { year: "2024", event: "Introduced Sound Healing and breathwork programs" },
 ];
 
@@ -85,7 +85,7 @@ export default function AboutPage() {
               but to remember.
             </p>
             <p className="font-sans text-charcoal/70 leading-relaxed">
-              In 2018, Elena Vasquez opened our doors on Fillmore Street with one room, 
+              In 2018, Elena Vasquez opened our doors in Sheung Wan with one room, 
               twelve mats, and an intention: to create a space where the intensity of city life 
               could be met with deep, deliberate calm.
             </p>
@@ -101,8 +101,8 @@ export default function AboutPage() {
               Where we are now
             </h2>
             <p className="font-sans text-charcoal/70 leading-relaxed mb-6">
-              Today, Sanctuary holds space for over 200 regular practitioners. Our restored 
-              Victorian studio on Fillmore Street is bathed in natural light, warmed by radiant 
+              Today, Sanctuary holds space for over 200 regular practitioners. Our studio 
+              in Central is bathed in natural light, warmed by radiant 
               heat, and scented with sage and cedar.
             </p>
             <p className="font-sans text-charcoal/70 leading-relaxed">
