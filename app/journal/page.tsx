@@ -12,7 +12,7 @@ const posts = [
     title: '5 Breathwork Exercises for the MTR Morning Commute',
     date: '2024-11-10',
     excerpt:
-      'The 8:23 AM Tsuen Wan Line doesn't have to stress you out. Here are five discreet, powerful breathwork techniques you can practice with your eyes closed and your hand on the rail.',
+      "The 8:23 AM Tsuen Wan Line doesn't have to stress you out. Here are five discreet, powerful breathwork techniques you can practice with your eyes closed and your hand on the rail.",
     body: `Box breathing for the platform wait, the 4-7-8 technique for a packed carriage, how to use the tunnel dark as a meditation moment, why holding the handrail can ground you, and a morning affirmation for the final stop.`,
     author: 'Anjali Mehta',
   },
