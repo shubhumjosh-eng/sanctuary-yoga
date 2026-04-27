@@ -7,6 +7,7 @@ import SmoothScrollProvider from "@/components/global/SmoothScrollProvider";
 import { ToastProvider } from "@/components/global/Toast";
 import { ThemeProvider } from "@/components/global/ThemeProvider";
 import BackToTop from "@/components/global/BackToTop";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Sanctuary Yoga | Multi-Vendor Marketplace for Yoga Teachers",
@@ -118,6 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </SmoothScrollProvider>
           </ToastProvider>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
