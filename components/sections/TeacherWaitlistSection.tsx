@@ -34,7 +34,7 @@ export default function TeacherWaitlistSection() {
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-sage mb-4">Teach at Sanctuary</p>
           <h2 className="font-serif text-display-md text-linen mb-6">Join Our Founding Cohort</h2>
           <p className="font-sans text-linen/60 max-w-xl mx-auto mb-12 leading-relaxed">
-            We're onboarding San Francisco's best independent yoga instructors. 
+            We're onboarding Hong Kong's best independent yoga instructors. 
             Apply below for early access and <span className="text-sage font-medium">0% platform fees for your first 3 months</span>.
           </p>
         </motion.div>
