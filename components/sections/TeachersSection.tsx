@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 interface Instructor {
   id: string;
@@ -122,11 +123,11 @@ export default function TeachersSection() {
               className="group relative overflow-hidden rounded-2xl border border-[rgba(28,28,28,0.07)] hover:border-[rgba(28,28,28,0.15)] transition-all duration-500"
             >
               <div className="relative h-72 md:h-80 overflow-hidden">
-                <img
+                <Image
                   src={teacher.avatar_url}
                   alt={`${teacher.name} — yoga instructor`}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                  loading="lazy"
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-linen/90 via-linen/10 to-transparent" />
                 <div className="absolute top-4 right-4 px-3 py-1 rounded-full glass text-xs font-sans text-charcoal/60 tracking-wide">

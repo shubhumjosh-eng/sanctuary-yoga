@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const values = [
   {
@@ -58,11 +59,11 @@ export default function AboutPage() {
         transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="relative h-[50vh] md:h-[70vh] overflow-hidden mb-24"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1600&q=80"
           alt="Sanctuary yoga studio interior"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-linen/60 via-transparent to-transparent" />
       </motion.div>

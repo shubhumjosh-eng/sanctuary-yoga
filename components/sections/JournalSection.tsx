@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const posts = [
   {
@@ -76,12 +77,11 @@ export default function JournalSection() {
           >
             {/* Image */}
             <div className="relative h-56 rounded-2xl overflow-hidden mb-6">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={post.img}
                 alt={post.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                loading="lazy"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-linen/10 group-hover:bg-linen/0 transition-colors duration-300" />
             </div>

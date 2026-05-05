@@ -3,79 +3,18 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { yogaClasses } from "@/data/classes";
 
-const classTypes = [
-  {
-    id: "vinyasa",
-    name: "Vinyasa Flow",
-    description: "A breath-synchronized movement practice connecting postures in seamless, meditative flow. Build strength, flexibility, and presence.",
-    duration: "60 min",
-    level: "All Levels",
-    price: 32,
-    img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
-    schedule: ["Mon/Wed/Fri 7:00 AM", "Tue/Thu 9:30 AM", "Sat 10:00 AM"],
-  },
-  {
-    id: "yin",
-    name: "Yin Yoga",
-    description: "A slow, floor-based practice targeting deep connective tissue. Poses held for 3-5 minutes to release tension and cultivate stillness.",
-    duration: "75 min",
-    level: "Beginner Friendly",
-    price: 32,
-    img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
-    schedule: ["Mon/Wed 6:00 PM", "Sun 11:00 AM"],
-  },
-  {
-    id: "meditation",
-    name: "Breathwork & Meditation",
-    description: "Guided meditation and pranayama techniques to calm the mind, balance the nervous system, and deepen awareness.",
-    duration: "45 min",
-    level: "All Levels",
-    price: 28,
-    img: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&q=80",
-    schedule: ["Tue/Thu 12:00 PM", "Sat 9:00 AM"],
-  },
-  {
-    id: "sound",
-    name: "Sound Healing Journey",
-    description: "Immersive sessions with crystal singing bowls, gongs, and tuning forks. Deeply restorative for stress relief and energy alignment.",
-    duration: "60 min",
-    level: "All Levels",
-    price: 45,
-    img: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80",
-    schedule: ["Fri 7:00 PM", "Sun 4:00 PM"],
-  },
-  {
-    id: "power",
-    name: "Power Vinyasa",
-    description: "An athletic, strength-building practice with challenging sequences. Expect to sweat and leave feeling empowered.",
-    duration: "75 min",
-    level: "Intermediate",
-    price: 35,
-    img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80",
-    schedule: ["Mon/Wed/Fri 5:30 PM", "Tue/Thu 6:00 AM"],
-  },
-  {
-    id: "restore",
-    name: "Restorative",
-    description: "Deeply supported poses with props for complete relaxation. Perfect for recovery, stress, and nervous system reset.",
-    duration: "90 min",
-    level: "All Levels",
-    price: 32,
-    img: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=80",
-    schedule: ["Sun 2:00 PM"],
-  },
-];
-
-const levels = ["All", "Beginner Friendly", "Intermediate", "Advanced"];
+const allLevels = ["All", ...Array.from(new Set(yogaClasses.map((c) => c.level)))];
 
 export default function ClassesPage() {
   const router = useRouter();
   const [filter, setFilter] = useState("All");
 
-  const filteredClasses = filter === "All" 
-    ? classTypes 
-    : classTypes.filter(c => c.level === filter || c.level.includes(filter));
+  const filteredClasses = filter === "All"
+    ? yogaClasses
+    : yogaClasses.filter((c) => c.level === filter || c.level.includes(filter));
 
   return (
     <div className="pt-32 pb-24 px-6 md:px-10">
@@ -106,7 +45,7 @@ export default function ClassesPage() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="flex flex-wrap gap-3 mb-12"
         >
-          {levels.map((level) => (
+          {allLevels.map((level) => (
             <button
               key={level}
               onClick={() => setFilter(level)}
@@ -134,11 +73,11 @@ export default function ClassesPage() {
             >
               {/* Image */}
               <div className="relative h-64 rounded-2xl overflow-hidden mb-5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={cls.img}
-                  alt={cls.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  alt={`${cls.name} yoga class`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full glass text-xs font-sans text-charcoal">

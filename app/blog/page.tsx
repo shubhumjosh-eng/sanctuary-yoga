@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const articles = [
   {
@@ -120,7 +121,7 @@ export default function BlogPage() {
               className="group cursor-pointer grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
             >
               <div className="relative h-72 md:h-96 rounded-3xl overflow-hidden">
-                <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                <Image src={featuredArticle.image} alt={featuredArticle.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
               </div>
               <div>
@@ -151,7 +152,7 @@ export default function BlogPage() {
             >
               <Link href={`/blog/${article.slug}`} className="group cursor-pointer">
                 <div className="relative h-52 rounded-2xl overflow-hidden mb-5">
-                  <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <Image src={article.image} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                   <div className="absolute top-4 left-4 px-3 py-1 rounded-full glass text-xs font-sans text-charcoal">{article.category}</div>
                 </div>
                 <h3 className="font-serif text-xl text-charcoal group-hover:text-sage transition-colors duration-300 mb-2">{article.title}</h3>

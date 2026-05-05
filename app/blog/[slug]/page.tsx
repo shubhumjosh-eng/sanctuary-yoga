@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useRouter, useParams } from "next/navigation";
+import Image from "next/image";
 
 const articles: Record<string, {
   title: string;
@@ -148,7 +149,7 @@ export default function BlogArticlePage() {
         transition={{ duration: 1 }}
         className="relative h-[40vh] md:h-[50vh] overflow-hidden mb-12"
       >
-        <img src={article.img} alt={article.title} className="w-full h-full object-cover" />
+        <Image src={article.img} alt={article.title} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-linen via-linen/20 to-transparent" />
       </motion.div>
 
