@@ -27,7 +27,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
           aria-hidden="true"
         >
-          <source src="https://videos.pexels.com/video-files/3225526/3225526-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-linen/55" />
       </motion.div>

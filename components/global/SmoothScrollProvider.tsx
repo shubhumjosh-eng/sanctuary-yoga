@@ -8,11 +8,11 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
     let rafId = 0;
 
-    import("@studio-freight/lenis").then(({ default: Lenis }) => {
+    import("lenis").then(({ default: Lenis }) => {
       lenis = new Lenis({
-        duration: 0.6,
-        easing: (t: number) => 1 - Math.pow(1 - t, 3),
+        lerp: 0.075,
         smoothWheel: true,
+        wheelMultiplier: 0.8,
       });
 
       function raf(time: number) {

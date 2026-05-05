@@ -29,13 +29,24 @@
   cursor: none;
 }
 
+html.lenis {
+  height: auto;
+}
+
+html.lenis body {
+  min-height: 100vh;
+}
+
+html.lenis body [data-scroll-container] {
+  min-height: 100vh;
+}
+
 html {
   color: var(--color-charcoal);
   background-color: var(--color-linen);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
 }
 
 body {
