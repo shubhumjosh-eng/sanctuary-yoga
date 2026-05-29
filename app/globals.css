@@ -26,40 +26,16 @@
 }
 
 * {
-  cursor: none;
+  cursor: auto;
 }
 
-html.lenis {
-  height: auto;
-}
-
-html.lenis body {
-  min-height: 100vh;
-}
-
-html.lenis body [data-scroll-container] {
-  min-height: 100vh;
-}
-
-html {
-  color: var(--color-charcoal);
-  background-color: var(--color-linen);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-body {
-  background-color: #F9F8F6;
-  overflow-x: hidden;
-  /* Optimize for smooth scrolling */
-  -webkit-overflow-scrolling: touch;
-  will-change: scroll-position;
-}
-
-/* Restore cursor for inputs */
-input, textarea, select, a, button {
-  cursor: none;
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none;
+  }
+  input, textarea, select, a, button {
+    cursor: none;
+  }
 }
 
 /* Custom scrollbar */
@@ -172,5 +148,16 @@ p, span, a, li, label {
 
 /* Mobile cursor reset */
 @media (max-width: 768px) {
+  * { cursor: auto !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cursor-ring, .cursor-dot { display: none; }
   * { cursor: auto !important; }
 }

@@ -150,7 +150,7 @@ export default function ScheduleSection() {
                       </span>
                       <button
                         onClick={() => router.push(`/cart?session=${encodeURIComponent(cls.name)}&teacher=${encodeURIComponent(cls.teacher)}&time=${encodeURIComponent(cls.time)}&price=32`)}
-                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-4 py-1.5 rounded-full border border-[rgba(28,28,28,0.15)] text-xs font-sans text-charcoal/70 hover:bg-terracotta hover:text-white hover:border-terracotta transition-all duration-200"
+                        className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 px-4 py-1.5 rounded-full border border-[rgba(28,28,28,0.15)] text-xs font-sans text-charcoal/70 hover:bg-terracotta hover:text-white hover:border-terracotta transition-all duration-200"
                       >
                         Book
                       </button>

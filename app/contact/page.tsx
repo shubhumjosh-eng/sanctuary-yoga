@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     question: "Is there parking?",
-    answer: "Street parking is available in Sheung Wan. We also recommend the MTR — we're a 5-minute walk from Ning Hong Ngan Shu.",
+    answer: "Street parking is available in Sheung Wan. We also recommend the MTR — we're a 5-minute walk from Sai Ying Pun station.",
   },
   {
     question: "Can I cancel or reschedule?",
@@ -78,8 +78,17 @@ export default function ContactPage() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSubmitted(true);
+    } catch {
+      alert("Something went wrong. Please email us directly at hello@sanctuary-yoga.com");
+    }
   };
 
   return (
@@ -235,7 +244,7 @@ export default function ContactPage() {
             {/* Map */}
             <div className="rounded-3xl overflow-hidden h-64 border border-[rgba(28,28,28,0.08)]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0977904878!2d-122.4349!3d37.7849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580d8d8f0f0f0%3A0x0!2sFillmore%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.884085613683!2d114.1515!3d22.2846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSheung+Wan!5e0!3m2!1sen!2shk!4v1234567890"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

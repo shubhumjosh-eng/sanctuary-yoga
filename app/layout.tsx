@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 title: "Sanctuary Yoga | Hong Kong's Premium Wellness Marketplace",
 description:
     "Connect with Hong Kong's best independent yoga teachers. Book classes, discover new instructors, and practice what you need.",
-  keywords: ["yoga marketplace", "yoga teachers", "yoga classes san francisco", "book yoga class", "yoga instructor"],
+  keywords: ["yoga marketplace", "yoga teachers", "yoga classes hong kong", "book yoga class", "yoga instructor"],
   openGraph: {
     title: "Sanctuary | Breath-Led Yoga Practice",
     description: "Movement is Medicine. A digital sanctuary for breath-led practice.",
@@ -36,10 +36,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://sanctuary-yoga.com/#business",
+      "@id": "https://sanctuary-yoga.vercel.app/#business",
       "name": "Sanctuary Yoga Studio",
       "description": "A private yoga studio offering breath-led practice in Hong Kong.",
-      "url": "https://sanctuary-yoga.com",
+      "url": "https://sanctuary-yoga.vercel.app",
       "telephone": "+852-5555-0190",
       "address": {
         "@type": "PostalAddress",

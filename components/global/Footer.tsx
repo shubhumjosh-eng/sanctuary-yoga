@@ -7,12 +7,18 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail("");
-    }
+    if (!email) return;
+    try {
+      await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+    } catch {}
+    setSubmitted(true);
+    setEmail("");
   };
 
   return (
@@ -98,8 +104,8 @@ export default function Footer() {
               </form>
             )}
             <div className="flex gap-5 mt-8">
-              <a href="https://instagram.com/sanctuaryyoga" target="_blank" rel="noopener" className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200">Instagram</a>
-              <a href="https://pinterest.com/sanctuaryyoga" target="_blank" rel="noopener" className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200">Pinterest</a>
+              <a href="https://instagram.com/sanctuaryyoga" target="_blank" rel="noopener noreferrer" className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200">Instagram</a>
+              <a href="https://pinterest.com/sanctuaryyoga" target="_blank" rel="noopener noreferrer" className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200">Pinterest</a>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <main className="min-h-screen pt-32 pb-24 px-6 md:px-10 max-w-3xl mx-auto">
+      <div className="min-h-screen pt-32 pb-24 px-6 md:px-10 max-w-3xl mx-auto">
         <Link
           href="/"
           className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-charcoal/40 hover:text-charcoal transition-colors duration-200 mb-12"
@@ -87,7 +87,7 @@ export default function TermsPage() {
           <Link href="/terms" className="hover:text-charcoal/60 transition-colors">Terms of Use</Link>
           <Link href="/privacy" className="hover:text-charcoal/60 transition-colors">Privacy Policy</Link>
         </div>
-      </main>
+      </div>
     </>
   );
 }

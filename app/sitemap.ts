@@ -16,6 +16,8 @@ export default function sitemap() {
     { path: "cart", priority: 0.3 },
     { path: "checkout", priority: 0.3 },
     { path: "login", priority: 0.3 },
+    { path: "privacy", priority: 0.2 },
+    { path: "terms", priority: 0.2 },
   ];
 
   const classRoutes = [
