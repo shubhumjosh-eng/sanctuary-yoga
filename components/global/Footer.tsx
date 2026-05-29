@@ -98,15 +98,8 @@ export default function Footer() {
               </form>
             )}
             <div className="flex gap-5 mt-8">
-              {["Instagram", "Pinterest"].map((soc) => (
-                <a
-                  key={soc}
-                  href="#"
-                  className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200"
-                >
-                  {soc}
-                </a>
-              ))}
+              <a href="https://instagram.com/sanctuaryyoga" target="_blank" rel="noopener" className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200">Instagram</a>
+              <a href="https://pinterest.com/sanctuaryyoga" target="_blank" rel="noopener" className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200">Pinterest</a>
             </div>
           </div>
         </div>
@@ -118,7 +111,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Use"].map((item) => (
-              <a key={item} href="#" className="font-sans text-xs text-charcoal/30 hover:text-charcoal/60 transition-colors duration-200">
+              <a key={item} href={item === "Privacy Policy" ? "/privacy" : "/terms"} className="font-sans text-xs text-charcoal/30 hover:text-charcoal/60 transition-colors duration-200">
                 {item}
               </a>
             ))}

@@ -67,8 +67,14 @@ export default async function CheckoutPage({
                 <p className="font-sans text-xs uppercase tracking-[0.2em] text-charcoal/50">Order total</p>
                 <p className="mt-4 font-serif text-5xl text-charcoal">${amount}</p>
               </div>
-              <div className="mt-6 flex flex-col gap-3">
-                <PayNowButton />
+               <div className="mt-6 flex flex-col gap-3">
+                 <PayNowButton
+                   plan={plan}
+                   price={price}
+                   session={session}
+                   teacher={teacher}
+                   time={time}
+                 />
                 <Link
                   href="/cart"
                   className="inline-flex items-center justify-center rounded-full border border-charcoal/10 bg-white px-6 py-3 text-sm font-sans text-charcoal tracking-[0.08em] hover:bg-charcoal/5 transition-colors duration-300"
@@ -77,15 +83,9 @@ export default async function CheckoutPage({
                 </Link>
               </div>
             </div>
-          </div>
-
-          <div className="mt-10 rounded-3xl border border-dashed border-charcoal/15 bg-charcoal/5 p-6">
-            <p className="font-sans text-sm text-charcoal/70 leading-relaxed">
-              Note: This is currently a checkout flow placeholder. To accept real payments, integrate a payment provider such as Stripe and connect your booking backend.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+           </div>
+         </div>
+       </div>
+     </section>
   );
 }

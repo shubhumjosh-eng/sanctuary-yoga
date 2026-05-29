@@ -169,7 +169,7 @@ export default function ScheduleSection() {
           transition={{ delay: 0.5 }}
           className="mt-12 flex justify-center"
         >
-          <a href="#" className="kinetic-link font-sans text-sm tracking-[0.1em] uppercase text-charcoal/40 hover:text-charcoal transition-colors duration-200">
+          <a href="/#schedule" className="kinetic-link font-sans text-sm tracking-[0.1em] uppercase text-charcoal/40 hover:text-charcoal transition-colors duration-200">
             View full schedule →
           </a>
         </motion.div>

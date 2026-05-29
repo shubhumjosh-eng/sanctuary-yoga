@@ -94,10 +94,6 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="font-sans text-sm text-charcoal/40 text-center mt-8">
-          Demo: demo@sanctuary-yoga.com / demo123
-        </p>
-
         <Link href="/" className="block text-center mt-6 font-sans text-sm text-charcoal/50 hover:text-charcoal">
           ← Back to home
         </Link>

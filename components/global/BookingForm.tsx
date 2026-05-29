@@ -203,6 +203,8 @@ export default function BookingForm() {
     setSubmitting(true);
     setError("");
 
+    const sanitize = (input: string) => input.replace(/[<>]/g, '').trim();
+
     const classDate = getNextOccurrence(selectedSchedule.day_of_week);
 
     try {
@@ -212,16 +214,18 @@ export default function BookingForm() {
         body: JSON.stringify({
           class_schedule_id: selectedSchedule.id,
           class_date: classDate.toISOString().split("T")[0],
-          student_name: formData.name,
-          student_email: formData.email,
-          student_phone: formData.phone,
-          notes: formData.notes,
+          student_name: sanitize(formData.name),
+          student_email: formData.email.toLowerCase().trim(),
+          student_phone: sanitize(formData.phone),
+          notes: sanitize(formData.notes),
         }),
       });
 
       const data = await res.json();
 
-      if (data.error) {
+      if (!res.ok) {
+        setError(data.error || "Booking failed. Please try again.");
+      } else if (data.error) {
         setError(data.error);
       } else {
         setSuccess(true);

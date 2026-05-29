@@ -35,20 +35,21 @@ export default function BookingForm() {
   }) : "";
 
   const sendEmail = () => {
-    const subject = `New Booking: ${formData.name} - ${selectedService?.name || 'Yoga Session'}`;
+    const sanitize = (input: string) => input.replace(/[<>]/g, '').trim();
+    const subject = `New Booking: ${sanitize(formData.name)} - ${selectedService?.name || 'Yoga Session'}`;
     const body = `Hi Sanctuary Team,
 
 I'd like to book a yoga session. Here are my details:
 
-NAME: ${formData.name}
-EMAIL: ${formData.email}
-PHONE: ${formData.phone || 'Not provided'}
+NAME: ${sanitize(formData.name)}
+EMAIL: ${formData.email.toLowerCase().trim()}
+PHONE: ${sanitize(formData.phone) || 'Not provided'}
 
 SESSION: ${selectedService?.name} (${selectedService?.duration}) - ${selectedService?.price}
 DATE: ${formattedDate}
 TIME: ${formData.time || 'Flexible'}
 
-NOTES: ${formData.notes || 'None'}
+NOTES: ${sanitize(formData.notes) || 'None'}
 
 Thank you!`;
 

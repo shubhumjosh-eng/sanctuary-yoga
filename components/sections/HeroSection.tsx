@@ -24,10 +24,12 @@ export default function HeroSection() {
           loop
           playsInline
           preload="auto"
+          poster="/og-image.jpg"
           className="w-full h-full object-cover"
           aria-hidden="true"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-linen/55" />
       </motion.div>
@@ -92,7 +94,7 @@ export default function HeroSection() {
               Find a Class
             </a>
             <a
-              href="/contact"
+              href="/#teacher-waitlist"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-charcoal/20 bg-transparent text-charcoal font-sans text-sm tracking-wider hover:bg-charcoal/5 transition-colors duration-300"
             >
               Become a Teacher
