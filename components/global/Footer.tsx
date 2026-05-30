@@ -104,8 +104,9 @@ export default function Footer() {
               </form>
             )}
             <div className="flex gap-5 mt-8">
-              <a href="https://instagram.com/sanctuaryyoga" target="_blank" rel="noopener noreferrer" className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200">Instagram</a>
-              <a href="https://pinterest.com/sanctuaryyoga" target="_blank" rel="noopener noreferrer" className="font-sans text-xs tracking-[0.1em] text-charcoal/40 hover:text-charcoal kinetic-link transition-colors duration-200">Pinterest</a>
+              {/* TODO: Replace # with real URLs once social accounts are created */}
+              <span className="font-sans text-xs tracking-[0.1em] text-charcoal/20">Instagram</span>
+              <span className="font-sans text-xs tracking-[0.1em] text-charcoal/20">Pinterest</span>
             </div>
           </div>
         </div>
